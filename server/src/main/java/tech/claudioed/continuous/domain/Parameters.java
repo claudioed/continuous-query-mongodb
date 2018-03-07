@@ -3,10 +3,10 @@ package tech.claudioed.continuous.domain;
 import lombok.Data;
 
 @Data
-public class Device {
+public class Parameters {
 
-    String name;
+  private Double min;
 
-    String location;
+  private Double max;
 
 }
