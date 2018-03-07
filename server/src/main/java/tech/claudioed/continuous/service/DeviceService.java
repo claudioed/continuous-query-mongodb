@@ -48,9 +48,7 @@ public class DeviceService {
 
   public Flux<Temperature> reachMin(String deviceId){
     return this.deviceRepository.findById(deviceId)
-        .flatMapMany(device -> {
-          return this.temperatureRepository.findByDeviceIdAndValueLessThan(deviceId,device.getSetup().getMin());
-        });
+        .flatMapMany(device -> this.temperatureRepository.findByDeviceIdAndValueLessThan(deviceId,device.getSetup().getMin()));
   }
 
 }
